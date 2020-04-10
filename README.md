@@ -44,7 +44,9 @@ and compare output_test.json with expect_output.json
 ### Rest API
 run the server ```./obs_test```
 load postman collection Movement plan.postman_collection.json located in test folder and send Post movement plan request or execute the following curl and compare the output with the content of test/expect_output.json
-```curl --location --request POST 'http://localhost:8080/rover/v1/plans' \
+
+```
+ curl --location --request POST 'http://localhost:8080/rover/v1/plans' \
    --header 'Content-Type: application/json' \
    --header 'Cookie: JSESSIONID=36D0B5056D05A65307A86E230F30B96E' \
    --data-raw '{ 
