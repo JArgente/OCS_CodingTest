@@ -18,13 +18,50 @@ As hexagonal architecture says, all the dependencies are from outer layers to in
 
 This way it is possible to change the way the application is related with the external world without modify the core business functionality.
 
+Because I haven't had enough time I can't make unit test, but They must be a must
+
 ## How to run
 It is designed to run in a Linux system
 
 ### Prerequisites
-- To have a jre installed and java command in the classpath
+- To have a jre 11 installed and java command in the classpath
 
 ### Run
 - cd into the root directory where is mvnw and obs_test scripts
-- run mvnw clean install to genereate the jar binary executable artifact
-- run obs_test either with input and output file to run in console mode or without arguments to start the server
+- run ```./mvnw clean install``` to genereate the jar binary executable artifact
+- run ```./obs_test``` either with input and output file to run in console mode or without arguments to start the server.
+Console mode will run only if you pass two arguments, if any other number of arguments are passed it will run in server mode
+
+### Test
+To test the applicaton, there is a folder named test in root directory where there are two files input_test.json and expect_output.json to test console mode and a postman collection to test API rest
+#### Console
+in project root directory run 
+
+```./obs_test ./test/input_test.json ./test/output_test.json``` 
+
+and compare output_test.json with expect_output.json
+
+### Rest API
+run the server ```./obs_test```
+load postman collection Movement plan.postman_collection.json located in test folder and send Post movement plan request or execute the following curl and compare the output with the content of test/expect_output.json
+```curl --location --request POST 'http://localhost:8080/rover/v1/plans' \
+   --header 'Content-Type: application/json' \
+   --header 'Cookie: JSESSIONID=36D0B5056D05A65307A86E230F30B96E' \
+   --data-raw '{ 
+     "terrain": [ 
+       ["Fe", "Fe", "Se"], 
+       ["W", "Si", "Obs"], 
+       ["W", "Obs", "Zn"] 
+     ], 
+     "battery": 50, 
+     "commands": [ 
+       "F", "S", "R", "F", "S", "R", "F", "L", "F", "S" 
+       ], 
+     "initialPosition": { 
+       "location" : { 
+         "x" : 0, 
+         "y" : 0 
+       }, 
+       "facing" : "East" 
+     } 
+   } ' ```

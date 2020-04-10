@@ -1,0 +1,13 @@
+{
+  "battery": 50, 
+  "commands": [ 
+    "F", "S", "R", "F", "S", "R", "F", "L", "F", "S" 
+    ], 
+  "initialPosition": { 
+    "location" : { 
+      "x" : 0, 
+      "y" : 0 
+    }, 
+    "facing" : "East" 
+  } 
+} 

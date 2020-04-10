@@ -1,0 +1,40 @@
+{
+	"info": {
+		"_postman_id": "9637d318-121a-4753-b614-87e2c935a4dd",
+		"name": "Movement plan",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Post movement plan",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n  \"terrain\": [ \n    [\"Fe\", \"Fe\", \"Se\"], \n    [\"W\", \"Si\", \"Obs\"], \n    [\"W\", \"Obs\", \"Zn\"] \n  ], \n  \"battery\": 50, \n  \"commands\": [ \n    \"F\", \"S\", \"R\", \"F\", \"S\", \"R\", \"F\", \"L\", \"F\", \"S\" \n    ], \n  \"initialPosition\": { \n    \"location\" : { \n      \"x\" : 0, \n      \"y\" : 0 \n    }, \n    \"facing\" : \"East\" \n  } \n} ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/rover/v1/plans",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rover",
+						"v1",
+						"plans"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

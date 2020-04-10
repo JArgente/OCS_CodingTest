@@ -2,6 +2,7 @@ package com.olympic.channel.rover.infrastructure.spring.mappers
 
 import com.olympic.channel.rover.application.Plan
 import com.olympic.channel.rover.domain.Position
+import com.olympic.channel.rover.infrastructure.spring.errors.BadFormatException
 import com.olympic.channel.rover.infrastructure.spring.parsers.ActionParser
 import com.olympic.channel.rover.infrastructure.spring.parsers.DirectionParser
 import com.olympic.channel.rover.infrastructure.spring.parsers.TerrainParser

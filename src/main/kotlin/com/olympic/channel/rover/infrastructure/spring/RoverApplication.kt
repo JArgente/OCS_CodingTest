@@ -16,7 +16,8 @@ fun main(args: Array<String>) {
 	if(args.size == 2){
 		val input = File(args[0])
 		val output = File(args[1])
-		consoleProcessor.processFiles(input, output)
+		val result = consoleProcessor.processFiles(input, output)
+		System.exit(result)
 	}else
 		runApplication<RoverApplication>(*args)
 }

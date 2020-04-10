@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: ocs
+server:
+  port: 8080
+
+logging:
+  level:
+    org:
+      springframework:
+        web: INFO
+        security: INFO
+    com:
+      olympic:
+        channel: INFO
+  path: logs/default-log
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %-5level - %msg%n"
+    file:  "%d{yyyy-MM-dd HH:mm:ss} - %-5level - %msg%n"
